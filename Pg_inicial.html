@@ -1,36 +1,50 @@
 <!DOCTYPE html>
-<html lang="Pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina inicial</title>
-    <link rel="stylesheet" href="pg_inicial.css">
-    <div class="Image">
-        <img src="./img/brain-512758_1280.jpeg" class="fotododick">
-    </div>
+    <title>Quiz de Tecnologia - Pagina Inicial</title>
+    <link rel="stylesheet" href="css/pg_inicial.css">
 </head>
 <body>
-    <h1>Teste Seus Conhecimentos!</h1><br>
-<h2>Haverá 15 perguntas de múltipla escolha nesse quiz. Focando totalmente
- </h2>
-    <h2>em avaliar seus conhecimentos na área da tecnologia e computação
-</h2>
-<p>Boa Sorte!</p>
-    <div>
-        <button onclick="jogar()" class="butao" id="butao">Jogar</button><br>
-    </div>
-    <main class="sobre">
-        <section>
-            <h2>Talvez você ira ler isto.</h2>
-    <details>
-            <ol>
-                <li>Feito Por Bruno <strong>1 ano (Informatica A)</strong><br>
-                    @brunlx.xz
-                </li>
-            </ol>
-    </details>
-    </section>
+    <header class="inicio-header">
+        <h1 class="inicio-header__titulo">Teste Seus Conhecimentos!</h1>
+        <aside class="inicio-header__decoracao" aria-hidden="true">
+            <img src="./img/brain-512758_1280.webp" alt="Ilustracao de cerebro representando conhecimento" class="inicio-header__decoracao-img" width="250" height="200" loading="eager" decoding="async">
+        </aside>
+    </header>
+
+    <main>
+        <section class="inicio-intro">
+            <p class="inicio-intro__texto">15 perguntas de multipla escolha focadas em avaliar seus conhecimentos na area de tecnologia e computacao.</p>
+            <p class="inicio-intro__sorte">Boa Sorte!</p>
+        </section>
+
+        <div class="inicio-botoes">
+            <button type="button" id="btn-jogar" class="inicio-botoes__botao">Jogar</button>
+            <button type="button" id="btn-ranking" class="inicio-botoes__botao inicio-botoes__botao--secundario">Ranking</button>
+        </div>
+
+        <section class="inicio-sobre" aria-labelledby="sobre-titulo">
+            <h2 id="sobre-titulo" class="inicio-sobre__titulo">Sobre</h2>
+            <details>
+                <summary>Clique para ver os creditos</summary>
+                <p>Feito por Bruno — <strong>1o ano (Informatica A)</strong></p>
+                <p>@brunlx.xz</p>
+            </details>
+        </section>
     </main>
-    <script src="pg_inicial.js"></script>
+
+    <div id="modal-ranking-overlay" class="modal-overlay" aria-hidden="true">
+        <div id="modal-ranking" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-ranking-titulo">
+            <h2 id="modal-ranking-titulo" class="modal__titulo">Ranking</h2>
+            <div id="ranking-lista"></div>
+            <div class="modal__acoes">
+                <button type="button" id="btn-fechar-ranking">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/pg_inicial.js" defer></script>
 </body>
 </html>

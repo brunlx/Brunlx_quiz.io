@@ -1,212 +1,57 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz</title>
-    <link rel="stylesheet" href="jogo.css">
-    <div class="nega">
-        <img src="./img/Hatsune_Miku_V2.png">
-    </div>
+    <title>Quiz de Tecnologia</title>
+    <link rel="stylesheet" href="css/jogo.css">
 </head>
 <body>
-    <h1>VAMOS COMEÇAR!</h1>
-    <!--Pergunta 1-->
-    <section>
-            <h2>Qual o SO Mais Utilizado Para Pentest?</h2><br>
-            <input type="radio" name="pergunta1" id="p1a" value="false">
-            <label for="p1a">Debian Linux</label><br>
-             <input type="radio" name="pergunta1" id="p1b" value="true">
-            <label for="p1b">Kali Linux</label><br>
-             <input type="radio" name="pergunta1" id="p1c" value="false">
-            <label for="p1c">Arch Linux</label><br>
-            <input type="radio" name="pergunta1" id="p1d" value="false">
-            <label for="p1d">Windows 11</label><br>
-    </section>
-    <!--Pergunta 2-->
-    <section>
-        <h2>
-            Qual Uma Das Principais Ferramentas Usadas Para Mapeamento de Portas em Rede?
-        </h2><br>
-        <input type="radio" name="pergunta2" id="p2a" value="true">
-        <label for="p2a">Nmap</label><br>
-        <input type="radio" name="pergunta2" id="p2b" value="false">
-        <label for="p2b">Medusa</label><br>
-        <input type="radio" name="pergunta2" id="p2c" value="false">
-        <label for="p2c">Metasploit</label><br>
-        <input type="radio" name="pergunta2" id="p2d" value="false">
-        <label for="p2d">Hydra</label><br>
-    </section>
-    <!--Pergunta 3-->
-    <section>
-        <h2>Quantos Caracteres existem no Hexadecimal?</h2><br>
-        <input type="radio" name="pergunta3" id="p3a" value="false">
-        <label for="p3a">8 Caracteres</label><br>
-         <input type="radio" name="pergunta3" id="p3b" value="true">
-        <label for="p3b">16 Caracteres</label><br>
-         <input type="radio" name="pergunta3" id="p3c" value="false">
-        <label for="p3c">6 Caracteres</label><br>
-         <input type="radio" name="pergunta3" id="p3d" value="false">
-        <label for="p3d">32 Caracteres</label><br>
-    </section>
-    <!--Pergunta 4-->
-    <section>
-        <h2>
-            Quais Dessas Linguagens Abaixo São Usadas Para Banco de Dados?
-        </h2>
-        <p class="bdd">Há Mais De Uma Resposta Correta!</p><br>
-        <input type="checkbox" name="pergunta4" id="p4a" value="true">
-        <label for="p4a">Oracle DB</label><br>
-         <input type="checkbox" name="pergunta4" id="p4b" value="false">
-        <label for="p4b">C#</label><br>
-         <input type="checkbox" name="pergunta4" id="p4c" value="false">
-        <label for="p4c">C++</label><br>
-         <input type="checkbox" name="pergunta4" id="p4d" value="true">
-        <label for="p4d">MySQL</label><br>
-    </section>
-    <!--Pergunta 5-->
-    <section>
-        <h2>Qual Foi a Linguagem Utilizada Para Criar Este Site ?</h2><br>
-        <input type="radio" name="pergunta5" id="p5a" value="false">
-        <label for="p5a">Python</label><br>
-         <input type="radio" name="pergunta5" id="p5b" value="false">
-        <label for="p5b">C++</label><br>
-         <input type="radio" name="pergunta5" id="p5c" value="true">
-        <label for="p5c">HTML</label><br>
-         <input type="radio" name="pergunta5" id="p5d" value="false">
-        <label for="p5d">Java</label><br>
-    </section>
-    <!--Pergunta 6-->
-    <section>
-        <h2>
-            Qual o SO Mais Utilizado No Mundo?
-        </h2><br>
-        <input type="radio" name="pergunta6" id="p6a" value="true">
-        <label for="p6a">Android</label><br>
-         <input type="radio" name="pergunta6" id="p6b" value="false">
-        <label for="p6b">IOS</label><br>
-         <input type="radio" name="pergunta6" id="p6c" value="false">
-        <label for="p6c">Windows</label><br>
-         <input type="radio" name="pergunta6" id="p6d" value="false">
-        <label for="p6d">Unix</label><br>
-    </section>
-    <!--Pergunta 7-->
-    <section>
-        <h2>
-            O Hardware Mais Veloz é o:
-        </h2><br>
-        <input type="radio" name="pergunta7" id="p7a" value="false">
-        <label for="p7a">Disquete</label><br>
-        <input type="radio" name="pergunta7" id="p7b" value="false">
-        <label for="p7b">DVD</label><br>
-        <input type="radio" name="pergunta7" id="p7c" value="false">
-        <label for="p7c">HDD</label><br>
-        <input type="radio" name="pergunta7" id="p7d" value="true"> 
-        <label for="p7d">SDD</label><br>
-    </section>
-    <!--Pergunta 8-->
-    <section>
-        <h2>Qual o Hardware Representado Na Imagem ?</h2>
-        <img src="./img/1403750-radeon-31xtx-01-angle2-alpha.avif" class="Placa"><br>
-        <input type="radio" name="pergunta8" id="p8a" value="true">
-        <label for="p8a">Placa De Video</label><br>
-        <input type="radio" name="pergunta8" id="p8b" value="false">
-        <label for="p8b">Placa-Mae</label><br>
-        <input type="radio" name="pergunta8" id="p8c" value="false">
-        <label for="p8c">Fonte</label><br>
-        <input type="radio" name="pergunta8" id="p8d" value="false">
-        <label for="p8d">Teclado</label><br>
-        
-    </section>
-    <!--Pergunta 9-->
-    <section>
-        <h2>Quais Das Ferramentas Abaixo é Usado Para Brute Force ?</h2><br>
-        <input type="radio" name="pergunta9" id="p9a" value="false">
-        <label for="p9a">Msfvenom</label><br>
-        <input type="radio" name="pergunta9" id="p9b" value="true">
-        <label for="p9b">Hydra</label><br>
-        <input type="radio" name="pergunta9" id="p9c" value="false">
-        <label for="p9c">Aircrack-ng</label><br>
-        <input type="radio" name="pergunta9" id="p9d" value="false">
-        <label for="p9d">Wireshark</label><br>
-    </section>
-    <!--pergunta 10-->
-    <section>
-        <h2>
-            Qual o Principal Hardware Usado Para Mineracao De Criptos ?
-        </h2><br>
-        <input type="radio" name="pergunta10" id="p10a" value="false">
-        <label for="p10a">Processador</label><br>
-        <input type="radio" name="pergunta10" id="p10b" value="true">
-        <label for="p10b">Placa De Video</label><br>
-        <input type="radio" name="pergunta10" id="p10c" value="false">
-        <label for="p10c">Fonte</label><br>
-        <input type="radio" name="pergunta10" id="p10d" value="false">
-        <label for="p10d">Pendrive</label><br>
-    </section>
-    <!--Pergunta 11-->
-    <section>
-        <h2>Qual a Unica Linguagem <Strong>Nativa</Strong> Dos Computadores ?</h2><br>
-        <input type="radio" name="pergunta11" id="p11a" value="true">
-        <label for="p11a">Binario</label><br>
-         <input type="radio" name="pergunta11" id="p11b" value="false">
-        <label for="p11b">Hexadecimal</label><br>
-         <input type="radio" name="pergunta11" id="p11c" value="false">
-        <label for="p11c">Decimal</label><br>
-         <input type="radio" name="pergunta11" id="p11d" value="false">
-        <label for="p11d">Portugol</label><br>
-        
-    </section>
-    <!--Pergunta 12-->
-    <section>
-        <h2>
-           Qual a Camada Mais Funda Da Internet ?
-        </h2><br>
-        <input type="radio" name="pergunta12" id="p12a" value="false">
-        <label for="p12a">Surface</label><br>
-         <input type="radio" name="pergunta12" id="p12b" value="false">
-        <label for="p12b">Deepweb</label><br>
-         <input type="radio" name="pergunta12" id="p12c" value="true">
-        <label for="p12c">Darkweb</label><br>
-         <input type="radio" name="pergunta12" id="p12d" value="false">
-        <label for="p12d">Não há</label><br>
-    </section>
-    <!--Pergunta 13-->
-    <section>
-        <h2>
-            Quando Foi Criada a Internet ?
-        </h2><br>
-        <input type="date" name="pergunta13" id="p13"><br>
-    </section>
-    <!--Pergunta 14-->
-    <Section>
-        <h2>
-            Qual Hardware Faz a Leitura De Todo o Algoritmo?
-        </h2><br>
-        <input type="radio" name="pergunta14" id="p14a" value="false">
-        <label for="p14a"> Placa de Rede</label><br>
-        <input type="radio" name="pergunta14" id="p14b" value="false">
-        <label for="p14b"> Placa de Video</label><br>
-        <input type="radio" name="pergunta14" id="p14c" value="true">
-        <label for="p14c"> Processador</label><br>
-        <input type="radio" name="pergunta14" id="p14d" value="false">
-        <label for="p14d"> Memoria ram</label><br>
-    </Section>
-    <!--Pergunta 15-->
-    <section>
-        <h2>
-            O Código a Seguir Está Correto ?
-        </h2>
-        <h3 >
-            hydra -l admin -P senhas.txt 192.168.1.100 http-post-form "/login.php:user=^USER^&pass=^PASS^:Login Failed"
-        </h3><br>
-        <input type="radio" name="pergunta15" id="p15a" value="true">
-        <label for="p15a">Sim</label><br>
-        <input type="radio" name="pergunta15" id="p15b" value="false">
-        <label for="p15b">Não</label><br>
-    </section>
-    <script src="jogo.js"></script>
-    <button onclick="resultado()">Finalizar Quiz</button>
+    <header class="quiz-header">
+        <h1 class="quiz-header__titulo">VAMOS COMECAR!</h1>
+        <aside class="quiz-header__decoracao" aria-hidden="true">
+            <img src="./img/Hatsune_Miku_V2.webp" alt="nega" class="quiz-header__decoracao-img" width="350" height="450" loading="eager" decoding="async">
+        </aside>
+        <div class="quiz-header__progresso" aria-live="polite">Pergunta <span id="progresso-atual">0</span> de <span id="progresso-total">15</span></div>
+    </header>
 
+    <main>
+        <form id="quiz-form" aria-label="Quiz de tecnologia" novalidate>
+            <div id="quiz-list" class="quiz-list"></div>
+        </form>
+    </main>
+
+    <footer class="quiz-footer">
+        <button type="button" id="btn-finalizar" class="quiz-footer__botao">Finalizar Quiz</button>
+        <button type="button" id="btn-voltar" class="quiz-footer__botao">Voltar ao Inicio</button>
+    </footer>
+
+    <div id="modal-resultado-overlay" class="modal-overlay" aria-hidden="true">
+        <div id="modal-resultado" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-resultado-titulo">
+            <h2 id="modal-resultado-titulo" class="modal__titulo">Resultado</h2>
+            <div id="result-content"></div>
+            <div class="modal__acoes">
+                <button type="button" id="btn-fechar-modal">Fechar</button>
+                <button type="button" id="btn-reiniciar">Jogar Novamente</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-continuar-overlay" class="modal-overlay" aria-hidden="true">
+        <div id="modal-continuar" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-continuar-titulo">
+            <h2 id="modal-continuar-titulo" class="modal__titulo">Continuar de onde parou?</h2>
+            <p>Encontramos um progresso salvo. Deseja continuar?</p>
+            <div class="modal__acoes">
+                <button type="button" id="btn-continuar">Continuar</button>
+                <button type="button" id="btn-novo-quiz">Novo Quiz</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/dados.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/timer.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/jogo.js" defer></script>
 </body>
 </html>
