@@ -6,6 +6,18 @@ e redes**, feito com HTML, CSS e JavaScript puros — sem frameworks e sem backe
 O projeto nasceu como um trabalho de escola (1º ano — Informática A) e evoluiu para uma
 aplicação completa, moderna, responsiva e pronta para publicação como PWA.
 
+## Descrição do projeto
+
+O **QuizTech** é um quiz interativo sobre **tecnologia e computação** voltado para quem quer
+testar e ampliar seus conhecimentos de forma divertida. O usuário configura a partida (categoria,
+dificuldade e quantidade de perguntas), responde com cronômetro ativo e recebe feedback imediato
+com a explicação de cada questão, além de um resultado detalhado com desempenho, tempo e revisão.
+
+O objetivo é oferecer uma experiência de aprendizado gamificada: dá para acompanhar o próprio
+progresso, competir no ranking e revisar erros. Tudo isso em uma aplicação leve, sem frameworks
+e sem backend, que funciona em qualquer dispositivo com navegador moderno — inclusive offline,
+graças ao suporte a PWA (installable web app).
+
 ## Funcionalidades
 
 - **Página inicial profissional** com apresentação, estatísticas e instruções de uso.
@@ -144,9 +156,11 @@ Netlify, Vercel, Cloudflare Pages, Render ou qualquer servidor web simples.
 3. Rode os testes (`npm test`) antes de enviar.
 4. Abra um *Pull Request* descrevendo a mudança.
 
-## Créditos
+## Contribuidores
 
-Feito por **Bruno** — 1º ano (Informática A) · @brunlx.xz
+- **Bruno (@brunlx.xz)** — autor do projeto, idealização, conteúdo das perguntas e desenvolvimento do site.
+  - 1º ano (Informática A) · Instagram: @brunlx.xz
+- **OpenCode (assistente de IA)** — apoio no desenvolvimento e na estruturação do projeto.
 
 ## Licença
 
