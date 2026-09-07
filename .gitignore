@@ -1,0 +1,18 @@
+# Dependências
+node_modules/
+
+# Arquivos temporários do sistema
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
+
+# Arquivos de editor
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Pasta de teste (se criada localmente)
+tests/node_modules/
