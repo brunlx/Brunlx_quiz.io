@@ -44,8 +44,8 @@ function secao(nome) {
 
 secao("Banco de perguntas");
 
-testar("contém 15 perguntas válidas", () => {
-    assert.strictEqual(PERGUNTAS.length, 15);
+testar("contém 23 perguntas válidas", () => {
+    assert.strictEqual(PERGUNTAS.length, 23);
 });
 
 testar("cada pergunta tem id, texto, tipo, categoria e dificuldade", () => {
@@ -94,13 +94,13 @@ testar("sem filtros retorna todas as perguntas", () => {
 
 testar("filtra por categoria", () => {
     const seguranca = filtrarPerguntas({ categoria: "seguranca" });
-    assert.strictEqual(seguranca.length, 4);
+    assert.strictEqual(seguranca.length, 6);
     assert.ok(seguranca.every((p) => p.categoria === "seguranca"));
 });
 
 testar("filtra por dificuldade", () => {
     const dificil = filtrarPerguntas({ dificuldade: "dificil" });
-    assert.strictEqual(dificil.length, 5);
+    assert.strictEqual(dificil.length, 7);
     assert.ok(dificil.every((p) => p.dificuldade === "dificil"));
 });
 
@@ -117,7 +117,7 @@ testar("limita a quantidade solicitada", () => {
 
 testar("não estoura o limite mesmo pedindo mais do que existe", () => {
     const pedindoMuito = filtrarPerguntas({ categoria: "seguranca", quantidade: 10 });
-    assert.strictEqual(pedindoMuito.length, 4);
+    assert.strictEqual(pedindoMuito.length, 6);
 });
 
 testar("categoria inválida cai em 'todas' na normalização", () => {

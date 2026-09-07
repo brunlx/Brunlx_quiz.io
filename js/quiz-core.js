@@ -189,6 +189,106 @@ const PERGUNTAS = [
         respostaCorreta: 0,
         explicacao:
             "O comando está correto: usa -l para usuário único, -P para lista de senhas e o formato http-post-form com os placeholders ^USER^ e ^PASS^."
+    },
+    {
+        id: 16,
+        categoria: "hardware",
+        dificuldade: "dificil",
+        texto: "Qual componente armazena as configurações de inicialização (BIOS/UEFI) do computador?",
+        tipo: "radio",
+        opcoes: ["HDD", "Memória ROM/flash da placa-mãe", "SSD", "Memória cache"],
+        respostaCorreta: 1,
+        explicacao:
+            "O firmware BIOS/UEFI fica gravado em uma memória ROM/flash localizada na placa-mãe, sendo responsável pelo POST e pela inicialização do sistema."
+    },
+    {
+        id: 17,
+        categoria: "hardware",
+        dificuldade: "medio",
+        texto: "Qual memória é a mais rápida e fica localizada dentro do processador?",
+        tipo: "radio",
+        opcoes: ["Memória cache", "Memória RAM", "HDD", "SSD"],
+        respostaCorreta: 0,
+        explicacao:
+            "A memória cache (níveis L1, L2 e L3) fica dentro ou muito próxima do processador, sendo a mais rápida do sistema, usada para acelerar o acesso aos dados mais usados."
+    },
+    {
+        id: 18,
+        categoria: "seguranca",
+        dificuldade: "facil",
+        texto: "Qual prática é a mais segura no dia a dia para proteger suas senhas?",
+        tipo: "radio",
+        opcoes: [
+            "Usar a mesma senha em todos os sites",
+            "Usar senhas fortes e únicas com autenticação em duas etapas",
+            "Anotar as senhas em papéis ao lado do computador",
+            "Compartilhar senhas com amigos de confiança"
+        ],
+        respostaCorreta: 1,
+        explicacao:
+            "Senhas fortes, únicas por serviço e combinadas com autenticação em duas etapas (2FA) reduzem drasticamente o risco de invasões e vazamentos."
+    },
+    {
+        id: 19,
+        categoria: "seguranca",
+        dificuldade: "medio",
+        texto: "O que é phishing?",
+        tipo: "radio",
+        opcoes: [
+            "Um vírus que apaga arquivos do computador",
+            "Uma técnica de engenharia social que tenta enganar usuários para obter dados",
+            "Um tipo de firewall de redes",
+            "Um ataque de força bruta contra servidores"
+        ],
+        respostaCorreta: 1,
+        explicacao:
+            "Phishing é uma técnica de engenharia social: o atacante se passa por uma empresa ou pessoa confiável (via e-mail, SMS ou site falso) para roubar senhas e dados pessoais."
+    },
+    {
+        id: 20,
+        categoria: "fundamentos",
+        dificuldade: "medio",
+        texto: "Quantos bits formam 1 byte?",
+        tipo: "radio",
+        opcoes: ["4 bits", "8 bits", "16 bits", "32 bits"],
+        respostaCorreta: 1,
+        explicacao:
+            "1 byte é formado por 8 bits, sendo a unidade básica de armazenamento usada para representar um caractere (letra, número ou símbolo)."
+    },
+    {
+        id: 21,
+        categoria: "fundamentos",
+        dificuldade: "dificil",
+        texto: "Qual algoritmo de ordenação possui complexidade O(n log n) no caso médio?",
+        tipo: "radio",
+        opcoes: ["Bubble sort", "Insertion sort", "Merge sort", "Selection sort"],
+        respostaCorreta: 2,
+        explicacao:
+            "O Merge sort divide o problema recursivamente e tem complexidade O(n log n) no melhor, médio e pior caso. Bubble, Insertion e Selection sort são O(n²) no caso médio."
+    },
+    {
+        id: 22,
+        categoria: "redes",
+        dificuldade: "facil",
+        texto: "Qual destes é um navegador (browser) de internet?",
+        tipo: "radio",
+        opcoes: ["Windows", "Google Chrome", "Photoshop", "Linux"],
+        respostaCorreta: 1,
+        explicacao:
+            "O Google Chrome é um navegador web. Windows e Linux são sistemas operacionais e o Photoshop é um editor de imagens."
+    },
+    {
+        id: 23,
+        categoria: "redes",
+        dificuldade: "medio",
+        texto: "Em que ano Tim Berners-Lee criou a World Wide Web (WWW)?",
+        tipo: "number",
+        anoCorreto: 1989,
+        minimo: 1900,
+        maximo: 2100,
+        placeholder: "Ex.: 1989",
+        explicacao:
+            "Em 1989, Tim Berners-Lee propôs a World Wide Web no CERN, criando o primeiro navegador e o protocolo HTTP. A internet em si (ARPANET) é de 1969 — são coisas diferentes."
     }
 ];
 

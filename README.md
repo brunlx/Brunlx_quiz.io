@@ -10,7 +10,7 @@ aplicação completa, moderna, responsiva e pronta para publicação como PWA.
 
 - **Página inicial profissional** com apresentação, estatísticas e instruções de uso.
 - **Configuração da partida**: categoria, dificuldade e quantidade de perguntas.
-- **Banco com 15 perguntas comentadas** organizadas por categoria e dificuldade:
+- **Banco com 23 perguntas comentadas** organizadas por categoria e dificuldade:
   - Categorias: Segurança da Informação, Hardware, Fundamentos e Redes e Dados.
   - Dificuldades: Fácil, Médio e Difícil.
   - Tipos de pergunta: múltipla escolha, múltipla seleção e resposta numérica.

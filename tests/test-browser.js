@@ -109,7 +109,7 @@ function abrirPagina(servidor, url, errosInjetados) {
     });
 
     testar("estatísticas são preenchidas", () => {
-        assert.strictEqual(doc.getElementById("cont-perguntas").textContent, "15");
+        assert.strictEqual(doc.getElementById("cont-perguntas").textContent, "23");
         assert.strictEqual(doc.getElementById("cont-categorias").textContent, "4");
         assert.strictEqual(doc.getElementById("cont-dificuldades").textContent, "3");
     });
@@ -117,7 +117,7 @@ function abrirPagina(servidor, url, errosInjetados) {
     testar("botão Jogar abre o modal de configuração", () => {
         doc.getElementById("btn-jogar").click();
         assert.ok(doc.getElementById("modal-config-overlay").classList.contains("modal-overlay--ativo"));
-        assert.strictEqual(doc.getElementById("config-disponiveis").textContent.trim(), "15 perguntas disponíveis");
+        assert.strictEqual(doc.getElementById("config-disponiveis").textContent.trim(), "23 perguntas disponíveis");
     });
 
     testar("configuração reflete número de perguntas disponíveis", () => {
