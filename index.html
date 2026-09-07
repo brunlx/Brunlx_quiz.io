@@ -1,50 +1,242 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz de Tecnologia - Pagina Inicial</title>
-    <link rel="stylesheet" href="css/pg_inicial.css">
+    <title>QuizTech — Teste Seus Conhecimentos em Tecnologia</title>
+    <meta name="description" content="Quiz de múltipla escolha sobre segurança da informação, hardware, fundamentos e redes. Teste seus conhecimentos, acompanhe seu desempenho e veja o ranking.">
+    <meta name="theme-color" content="#4f46e5">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="QuizTech — Teste Seus Conhecimentos em Tecnologia">
+    <meta property="og:description" content="Quiz interativo de múltipla escolha sobre tecnologia e computação. Escolha categoria, dificuldade e quantidade de perguntas.">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="QuizTech">
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <script>
+        (function () {
+            try {
+                var salvo = localStorage.getItem("quiztech.tema.v1");
+                var tema = salvo || (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+                document.documentElement.dataset.theme = tema === "dark" ? "dark" : "light";
+            } catch (erro) {
+                /* Mantém o tema padrão definido no HTML. */
+            }
+        })();
+    </script>
 </head>
 <body>
-    <header class="inicio-header">
-        <h1 class="inicio-header__titulo">Teste Seus Conhecimentos!</h1>
-        <aside class="inicio-header__decoracao" aria-hidden="true">
-            <img src="./img/brain-512758_1280.webp" alt="Ilustracao de cerebro representando conhecimento" class="inicio-header__decoracao-img" width="250" height="200" loading="eager" decoding="async">
-        </aside>
+    <header class="cabecalho">
+        <a class="marca" href="index.html" aria-label="QuizTech — página inicial">
+            <span class="marca__logo" aria-hidden="true">Q</span>
+            <span class="marca__nome">QuizTech</span>
+        </a>
+        <div class="cabecalho__acoes">
+            <button type="button" id="btn-tema" class="btn-tema" aria-label="Ativar modo escuro">
+                <span class="icone-tema icone-tema--ativo" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg></span>
+                <span class="icone-tema" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span>
+            </button>
+            <button type="button" id="btn-ranking" class="btn btn--secundario">Ver Ranking</button>
+        </div>
     </header>
 
     <main>
-        <section class="inicio-intro">
-            <p class="inicio-intro__texto">15 perguntas de multipla escolha focadas em avaliar seus conhecimentos na area de tecnologia e computacao.</p>
-            <p class="inicio-intro__sorte">Boa Sorte!</p>
+        <section class="hero">
+            <div class="hero__conteudo">
+                <span class="hero__destaque">15 questões de múltipla escolha</span>
+                <h1 class="hero__titulo">Teste seus conhecimentos <span>em tecnologia</span></h1>
+                <p class="hero__subtitulo">Segurança da informação, hardware, fundamentos e redes. Escolha o nível de dificuldade, pulse o cronômetro e comprove o quanto você sabe.</p>
+                <div class="hero__acoes">
+                    <button type="button" id="btn-jogar" class="btn btn--primario hero__botao">Começar o Quiz</button>
+                </div>
+            </div>
+            <figure class="hero__imagem" aria-hidden="true">
+                <img src="img/brain-512758_1280.webp" alt="" width="420" height="336" loading="lazy" decoding="async">
+            </figure>
         </section>
 
-        <div class="inicio-botoes">
-            <button type="button" id="btn-jogar" class="inicio-botoes__botao">Jogar</button>
-            <button type="button" id="btn-ranking" class="inicio-botoes__botao inicio-botoes__botao--secundario">Ranking</button>
-        </div>
+        <section class="secao secao--suave" aria-labelledby="como-funciona-titulo">
+            <div class="secao__cabecalho">
+                <h2 id="como-funciona-titulo" class="secao__titulo">Como funciona</h2>
+                <p class="secao__descricao">Três passos simples para testar o seu conhecimento.</p>
+            </div>
+            <ol class="passos">
+                <li class="passo">
+                    <span class="passo__numero" aria-hidden="true">1</span>
+                    <h3 class="passo__titulo">Escolha a configuração</h3>
+                    <p class="passo__texto">Defina a categoria, a dificuldade e a quantidade de perguntas que quer responder.</p>
+                </li>
+                <li class="passo">
+                    <span class="passo__numero" aria-hidden="true">2</span>
+                    <h3 class="passo__titulo">Responda as questões</h3>
+                    <p class="passo__texto">Cada resposta é avaliada na hora, com explicação e feedback para você aprender.</p>
+                </li>
+                <li class="passo">
+                    <span class="passo__numero" aria-hidden="true">3</span>
+                    <h3 class="passo__titulo">Veja seu desempenho</h3>
+                    <p class="passo__texto">Confira sua pontuação, percentual, tempo e o ranking. Jogue de novo sempre que quiser.</p>
+                </li>
+            </ol>
+        </section>
 
-        <section class="inicio-sobre" aria-labelledby="sobre-titulo">
-            <h2 id="sobre-titulo" class="inicio-sobre__titulo">Sobre</h2>
-            <details>
-                <summary>Clique para ver os creditos</summary>
-                <p>Feito por Bruno — <strong>1o ano (Informatica A)</strong></p>
-                <p>@brunlx.xz</p>
-            </details>
+        <section class="secao" aria-label="Estatísticas do quiz">
+            <div class="stats">
+                <div class="stat">
+                    <p class="stat__valor" id="cont-perguntas">—</p>
+                    <p class="stat__rotulo">Perguntas no banco</p>
+                </div>
+                <div class="stat">
+                    <p class="stat__valor" id="cont-categorias">—</p>
+                    <p class="stat__rotulo">Categorias</p>
+                </div>
+                <div class="stat">
+                    <p class="stat__valor" id="cont-dificuldades">—</p>
+                    <p class="stat__rotulo">Níveis de dificuldade</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="secao" aria-labelledby="sobre-titulo">
+            <div class="sobre">
+                <h2 id="sobre-titulo" class="secao__titulo">Sobre o projeto</h2>
+                <p class="sobre__texto">Um quiz de tecnologia para quem quer testar e ampliar seus conhecimentos de forma divertida.</p>
+                <details class="sobre__creditos">
+                    <summary>Créditos</summary>
+                    <p>Feito por <strong>Bruno</strong> — 1º ano (Informática A)</p>
+                    <p>Instagram: <strong>@brunlx.xz</strong></p>
+                </details>
+            </div>
         </section>
     </main>
 
+    <footer class="rodape">
+        <p><span class="rodape__autor">QuizTech</span> · Quiz de conhecimentos em tecnologia · 2024</p>
+    </footer>
+
+    <!-- Modal: configuração da partida -->
+    <div id="modal-config-overlay" class="modal-overlay" aria-hidden="true">
+        <div id="modal-config" class="modal modal--com-fechar" role="dialog" aria-modal="true" aria-labelledby="modal-config-titulo">
+            <button type="button" id="btn-fechar-config" class="modal__fechar" data-fechar-modal aria-label="Fechar">×</button>
+            <h2 id="modal-config-titulo" class="modal__titulo">Configurar partida</h2>
+            <p class="modal__descricao">Escolha como quer jogar e pressione começar.</p>
+
+            <form id="form-config" novalidate>
+                <fieldset class="config__secao">
+                    <legend class="campo__rotulo">Categoria</legend>
+                    <div class="grupo-opcoes">
+                        <label class="grupo-opcoes__opcao">
+                            <input class="grupo-opcoes__input" type="radio" name="categoria" value="todas" checked>
+                            <span class="grupo-opcoes__etiqueta">Todas</span>
+                        </label>
+                        <label class="grupo-opcoes__opcao">
+                            <input class="grupo-opcoes__input" type="radio" name="categoria" value="seguranca">
+                            <span class="grupo-opcoes__etiqueta">Segurança</span>
+                        </label>
+                        <label class="grupo-opcoes__opcao">
+                            <input class="grupo-opcoes__input" type="radio" name="categoria" value="hardware">
+                            <span class="grupo-opcoes__etiqueta">Hardware</span>
+                        </label>
+                        <label class="grupo-opcoes__opcao">
+                            <input class="grupo-opcoes__input" type="radio" name="categoria" value="fundamentos">
+                            <span class="grupo-opcoes__etiqueta">Fundamentos</span>
+                        </label>
+                        <label class="grupo-opcoes__opcao">
+                            <input class="grupo-opcoes__input" type="radio" name="categoria" value="redes">
+                            <span class="grupo-opcoes__etiqueta">Redes e Dados</span>
+                        </label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="config__secao">
+                    <legend class="campo__rotulo">Dificuldade</legend>
+                    <div class="grupo-opcoes">
+                        <label class="grupo-opcoes__opcao">
+                            <input class="grupo-opcoes__input" type="radio" name="dificuldade" value="todas" checked>
+                            <span class="grupo-opcoes__etiqueta">Todas</span>
+                        </label>
+                        <label class="grupo-opcoes__opcao">
+                            <input class="grupo-opcoes__input" type="radio" name="dificuldade" value="facil">
+                            <span class="grupo-opcoes__etiqueta">Fácil</span>
+                        </label>
+                        <label class="grupo-opcoes__opcao">
+                            <input class="grupo-opcoes__input" type="radio" name="dificuldade" value="medio">
+                            <span class="grupo-opcoes__etiqueta">Médio</span>
+                        </label>
+                        <label class="grupo-opcoes__opcao">
+                            <input class="grupo-opcoes__input" type="radio" name="dificuldade" value="dificil">
+                            <span class="grupo-opcoes__etiqueta">Difícil</span>
+                        </label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="config__secao">
+                    <legend class="campo__rotulo">Quantidade de perguntas</legend>
+                    <div class="grupo-opcoes">
+                        <label class="grupo-opcoes__opcao">
+                            <input class="grupo-opcoes__input" type="radio" name="quantidade" value="5">
+                            <span class="grupo-opcoes__etiqueta">5</span>
+                        </label>
+                        <label class="grupo-opcoes__opcao">
+                            <input class="grupo-opcoes__input" type="radio" name="quantidade" value="10">
+                            <span class="grupo-opcoes__etiqueta">10</span>
+                        </label>
+                        <label class="grupo-opcoes__opcao">
+                            <input class="grupo-opcoes__input" type="radio" name="quantidade" value="todas" checked>
+                            <span class="grupo-opcoes__etiqueta">Todas</span>
+                        </label>
+                    </div>
+                    <p class="config__disponiveis" id="config-disponiveis" role="status"></p>
+                </fieldset>
+
+                <div class="modal__acoes">
+                    <button type="submit" id="btn-iniciar-config" class="btn btn--primario">Começar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal: ranking e histórico -->
     <div id="modal-ranking-overlay" class="modal-overlay" aria-hidden="true">
-        <div id="modal-ranking" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-ranking-titulo">
-            <h2 id="modal-ranking-titulo" class="modal__titulo">Ranking</h2>
-            <div id="ranking-lista"></div>
+        <div id="modal-ranking" class="modal modal--com-fechar" role="dialog" aria-modal="true" aria-labelledby="modal-ranking-titulo">
+            <button type="button" id="btn-fechar-ranking" class="modal__fechar" data-fechar-modal aria-label="Fechar">×</button>
+            <h2 id="modal-ranking-titulo" class="modal__titulo">Ranking e histórico</h2>
+
+            <div class="atencao" role="tablist" aria-label="Ranking e histórico">
+                <button type="button" id="aba-ranking" class="atencao__botao aba-aberta" role="tab" aria-selected="true" aria-controls="painel-ranking">Ranking</button>
+                <button type="button" id="aba-historico" class="atencao__botao" role="tab" aria-selected="false" aria-controls="painel-historico">Histórico</button>
+            </div>
+
+            <div id="painel-ranking" role="tabpanel" aria-labelledby="aba-ranking">
+                <div id="ranking-lista"></div>
+            </div>
+            <div id="painel-historico" role="tabpanel" aria-labelledby="aba-historico" hidden>
+                <div id="historico-lista"></div>
+            </div>
+
             <div class="modal__acoes">
-                <button type="button" id="btn-fechar-ranking">Fechar</button>
+                <button type="button" class="btn btn--secundario" data-fechar-modal>Fechar</button>
             </div>
         </div>
     </div>
 
-    <script src="js/pg_inicial.js" defer></script>
+    <script src="js/config.js" defer></script>
+    <script src="js/quiz-core.js" defer></script>
+    <script src="js/storage.js" defer></script>
+    <script src="js/ui.js" defer></script>
+    <script src="js/tema.js" defer></script>
+    <script src="js/pagina-inicial.js" defer></script>
+
+    <script>
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", function () {
+                navigator.serviceWorker.register("sw.js").catch(function () {});
+            });
+        }
+    </script>
 </body>
 </html>

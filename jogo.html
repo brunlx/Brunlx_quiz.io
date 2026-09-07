@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizTech — Partida</title>
+    <meta name="description" content="Partida do QuizTech: responda as perguntas de múltipla escolha sobre tecnologia e veja seu desempenho ao final.">
+    <meta name="theme-color" content="#4f46e5">
+    <meta name="robots" content="noindex">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/jogo.css">
+
+    <script>
+        (function () {
+            try {
+                var salvo = localStorage.getItem("quiztech.tema.v1");
+                var tema = salvo || (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+                document.documentElement.dataset.theme = tema === "dark" ? "dark" : "light";
+            } catch (erro) {
+                /* Mantém o tema padrão definido no HTML. */
+            }
+        })();
+    </script>
+</head>
+<body>
+    <header class="cabecalho-quiz">
+        <div class="cabecalho-quiz__linha">
+            <a class="cabecalho-quiz__voltar" href="index.html" id="btn-voltar-inicio">&larr; Menu</a>
+            <span class="cabecalho-quiz__marca">QuizTech</span>
+            <button type="button" id="btn-tema" class="btn-tema" aria-label="Ativar modo escuro">
+                <span class="icone-tema icone-tema--ativo" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg></span>
+                <span class="icone-tema" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="quiz-main">
+        <div class="quiz-status">
+            <span class="quiz-status__cartao" id="quiz-categoria-cartao">
+                <span id="quiz-categoria">Categoria</span>
+            </span>
+            <span class="quiz-status__cartao" aria-label="Tempo decorrido">
+                <span class="quiz-status__tempo" id="quiz-tempo" aria-live="off">--:--</span>
+            </span>
+        </div>
+
+        <div class="quiz-progresso" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Perguntas respondidas">
+            <div class="quiz-progresso__barra" id="quiz-progresso-barra"></div>
+        </div>
+        <div class="quiz-progresso__legenda">
+            <span class="quiz-progresso__contador">
+                Pergunta <span id="quiz-atual">1</span> de <span id="quiz-total">0</span>
+            </span>
+            <span>
+                Respondidas: <span id="quiz-respondidas">0</span> de <span id="quiz-total-responder">0</span>
+            </span>
+        </div>
+
+        <section class="quiz-painel" id="quiz-painel" aria-live="polite"></section>
+
+        <p id="quiz-aviso" class="quiz-aviso" role="alert" hidden>Escolha uma resposta antes de avançar.</p>
+
+        <nav class="quiz-nav" aria-label="Navegação entre perguntas">
+            <button type="button" id="btn-anterior" class="btn btn--secundario">&larr; Anterior</button>
+            <button type="button" id="btn-proxima" class="btn btn--primario">Próxima</button>
+        </nav>
+    </main>
+
+    <!-- Modal: resultado -->
+    <div id="modal-resultado-overlay" class="modal-overlay" aria-hidden="true">
+        <div id="modal-resultado" class="modal modal--com-fechar" role="dialog" aria-modal="true" aria-labelledby="modal-resultado-titulo">
+            <button type="button" class="modal__fechar" data-fechar-modal aria-label="Fechar resultado">×</button>
+            <h2 id="modal-resultado-titulo" class="modal__titulo">Resultado</h2>
+            <div id="resultado-conteudo"></div>
+            <div class="modal__acoes">
+                <button type="button" id="btn-reiniciar" class="btn btn--primario">Jogar novamente</button>
+                <a href="index.html" class="btn btn--secundario" id="btn-menu">Voltar ao menu</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: continuar partida salva -->
+    <div id="modal-continuar-overlay" class="modal-overlay" aria-hidden="true">
+        <div id="modal-continuar" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-continuar-titulo">
+            <h2 id="modal-continuar-titulo" class="modal__titulo">Continuar de onde parou?</h2>
+            <p class="modal__descricao">Encontramos uma partida em andamento. Quer continuar de onde parou?</p>
+            <div class="modal__acoes">
+                <button type="button" id="btn-continuar" class="btn btn--primario">Continuar</button>
+                <button type="button" id="btn-novo-quiz" class="btn btn--secundario">Começar nova partida</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/config.js" defer></script>
+    <script src="js/quiz-core.js" defer></script>
+    <script src="js/storage.js" defer></script>
+    <script src="js/ui.js" defer></script>
+    <script src="js/timer.js" defer></script>
+    <script src="js/tema.js" defer></script>
+    <script src="js/jogo.js" defer></script>
+
+    <script>
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", function () {
+                navigator.serviceWorker.register("sw.js").catch(function () {});
+            });
+        }
+    </script>
+</body>
+</html>
