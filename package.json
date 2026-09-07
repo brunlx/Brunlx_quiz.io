@@ -1,0 +1,25 @@
+{
+    "name": "quiztech",
+    "version": "1.0.0",
+    "private": true,
+    "description": "QuizTech — Quiz interativo de múltipla escolha sobre tecnologia e computação.",
+    "keywords": [
+        "quiz",
+        "tecnologia",
+        "html",
+        "css",
+        "javascript",
+        "pwa"
+    ],
+    "author": "Bruno",
+    "license": "MIT",
+    "scripts": {
+        "test": "node tests/test-core.js && node tests/test-browser.js",
+        "test:core": "node tests/test-core.js",
+        "test:browser": "node tests/test-browser.js",
+        "serve": "node tests/servidor.js"
+    },
+    "devDependencies": {
+        "jsdom": "^24.0.0"
+    }
+}
